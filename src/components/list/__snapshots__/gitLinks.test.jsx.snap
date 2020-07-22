@@ -5,17 +5,24 @@ exports[`App component renders App 1`] = `
   <li
     key="myName"
   >
-    myName
+    <a
+      href="url"
+    >
+       
+      myName
+       
+    </a>
   </li>
   <li
-    key="the langston"
+    key="myName"
   >
-    the langston
-  </li>
-  <li
-    key="the langston"
-  >
-    the langston
+    <a
+      href="url"
+    >
+       
+      myName
+       
+    </a>
   </li>
 </ul>
 `;

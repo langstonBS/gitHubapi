@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-const List = ({ list }) => {
-  const listElements = list.map(repoName => (
-    <li key={repoName}>
-      {repoName}
+const List = ({ repos }) => {
+  const listElements = repos.map(repo => (
+    <li key={repo.name}>
+      <a href= {repo.html_url}> {repo.name} </a>
     </li>
   ));
-  
+
   return (
     <ul>
       {listElements}
@@ -16,7 +16,7 @@ const List = ({ list }) => {
 };
 
 List.propTypes = {
-  list: PropTypes.arrayOf(PropTypes.string).isRequired
+  repos: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default List;

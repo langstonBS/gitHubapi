@@ -3,15 +3,19 @@
 exports[`App component renders App 1`] = `
 <Fragment>
   <h2>
+    name: 
     myName
   </h2>
   <h2>
+    followerCount: 
     1
   </h2>
   <h2>
+    followingCount: 
     4
   </h2>
   <h2>
+    url :
     https:/github.com
   </h2>
 </Fragment>

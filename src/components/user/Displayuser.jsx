@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 const Displayuser = ({ name, followerCount, followingCount, githubLink }) => (
   <>
-    <h2>{name}</h2>
-    <h2>{followerCount}</h2>
-    <h2>{followingCount}</h2>
-    <h2>{githubLink}</h2>
+    <h2>name: {name}</h2>
+    <h2>followerCount: {followerCount}</h2>
+    <h2>followingCount: {followingCount}</h2>
+    <h2>url :{githubLink}</h2>
   </>
 );
 

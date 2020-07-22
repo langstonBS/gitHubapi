@@ -2,19 +2,19 @@
 
 
 const gitUserName = userName => {
-  return fetch(`https://api.github.com/users/:${userName}`, {
+  return fetch(`https://api.github.com/users/${userName}`, {
     
   })
     .then(res => res.json())
-    .then(({ userInfo }) => userInfo);
+    .then(({ links }) => links);
 };
 
 const gitRepoUrl = userName => {
-  return fetch(`https://api.github.com/users/:${userName}/repos`, {
+  return fetch(`https://api.github.com/users/${userName}/repos`, {
     
   })
     .then(res => res.json())
-    .then(({ repo })=> repo);
+    .then(({ links }) => links);
 };
 
 export { gitUserName, gitRepoUrl };
