@@ -16,7 +16,11 @@ exports[`App component renders App 1`] = `
   </h2>
   <h2>
     url :
-    https:/github.com
+    <a
+      href="https:/github.com"
+    >
+      Github URL
+    </a>
   </h2>
   <List
     repos={

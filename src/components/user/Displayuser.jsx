@@ -7,7 +7,7 @@ const Displayuser = ({ name, followerCount, followingCount, html_url, repos }) =
     <h2>name: {name}</h2>
     <h2>followerCount: {followerCount}</h2>
     <h2>followingCount: {followingCount}</h2>
-    <h2>url :{html_url}</h2>
+    <h2>url :< a href = {html_url}>Github URL</a></h2>
     <List repos={repos}/>
     
 
