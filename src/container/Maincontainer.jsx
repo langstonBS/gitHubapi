@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
 import Usegitform from '../components/form/Usergitform';
-import List from '../components/list/List';
 import Displayuser from '../components/user/Displayuser';
-import { gitUserName, gitRepoUrl } from '../services/gitLinks';
+import { getUserName, getRepo } from '../services/gitLinks';
 
 
 export default class Maincontainer extends Component {
   
   state = {
-    name: '',
     followers: '',
     following: '',
-    url: '',
-    userName: [],
-    userRepo:[],
-    repo: []
+    html_url: '',
+    userName: '',
+    name:'',
+    repos:[],
   }
 
   handleChange = ({ target }) => {
@@ -27,22 +25,19 @@ export default class Maincontainer extends Component {
     
     const { userName } = this.state;
     Promise.all([
-      gitUserName(userName)
+      getUserName(userName),
+      getRepo(userName)
     ])
-      .then(([name, followers, following, url]) => this.setState({ name, followers, following, url }));
-    console.log(this.state.userName);
+      .then(([{ name, followers, following, html_url }, repos]) => this.setState({ name, followers, following, html_url, repos }));
   }
 
   render() {
 
-    const { name, followers, following, url, userName } = this.state;
+    const { userName, name, followers, following, html_url, repos } = this.state;
     return (
       <>
-        <Usegitform userName={userName} onChange={this.handleChange} onSubmit={this.handleSubmit} />
-        <Displayuser name={name} followerCount={followers} followingCount={following} githubLink={url} />
-    
-
-        
+        <Usegitform userName={userName} onChange={this.handleChange} onSubmit={this.handleSubmit} /> 
+        <Displayuser name={name} followerCount={followers} followingCount={following} html_url={html_url} repos={repos} />
       </>
     );
   }

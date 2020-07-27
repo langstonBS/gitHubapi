@@ -1,20 +1,18 @@
 
 
 
-const gitUserName = userName => {
+const getUserName = userName => {
   return fetch(`https://api.github.com/users/${userName}`, {
     
   })
-    .then(res => res.json())
-    .then(({ links }) => links);
+    .then(res => res.json());
 };
 
-const gitRepoUrl = userName => {
+const getRepo = userName => {
   return fetch(`https://api.github.com/users/${userName}/repos`, {
     
   })
-    .then(res => res.json())
-    .then(({ links }) => links);
+    .then(res => res.json());
 };
 
-export { gitUserName, gitRepoUrl };
+export { getUserName, getRepo };

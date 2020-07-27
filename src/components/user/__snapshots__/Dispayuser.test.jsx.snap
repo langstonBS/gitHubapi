@@ -12,11 +12,25 @@ exports[`App component renders App 1`] = `
   </h2>
   <h2>
     followingCount: 
-    4
+    2
   </h2>
   <h2>
     url :
     https:/github.com
   </h2>
+  <List
+    repos={
+      Array [
+        Object {
+          "html_url": "url",
+          "name": "myName",
+        },
+        Object {
+          "html_url": "url",
+          "name": "myName",
+        },
+      ]
+    }
+  />
 </Fragment>
 `;

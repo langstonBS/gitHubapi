@@ -6,6 +6,7 @@ const Usergetform = ({ userName, onChange, onSubmit }) => (
     <input type="text" value={userName} onChange={onChange}></input>
     <button>Submit</button>
   </form>
+  
 );
 
 Usergetform.propTypes = {
