@@ -37,7 +37,7 @@ export default class Maincontainer extends Component {
     return (
       <>
         <Usegitform userName={userName} onChange={this.handleChange} onSubmit={this.handleSubmit} /> 
-        { name === '' ? <h3>Search a username </h3> :
+        { html_url === '' ? <h3>Search a username </h3> :
           <Displayuser name={name} followerCount={followers} followingCount={following} html_url={html_url} repos={repos} />
         }
       </>
